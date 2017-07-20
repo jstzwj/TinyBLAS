@@ -2,10 +2,11 @@
 #define LEVEL1_H
 #include<math.h>
 #include"utility.h"
+#include"version.h"
 /*
  * SROTG - setup Givens rotation
  */
-float srotg(float SA,float SB,float *C,float *S)
+COREAPI float srotg(float SA,float SB,float *C,float *S)
 {
     float r;
     float t,u;
@@ -46,7 +47,7 @@ float srotg(float SA,float SB,float *C,float *S)
  *
  */
 
-float srotmg(float SD1,float SD2,float SX1,float SY1,float SPARAM[5])
+COREAPI float srotmg(float SD1,float SD2,float SX1,float SY1,float SPARAM[5])
 {
 
 }
@@ -71,6 +72,60 @@ float srotmg(float SD1,float SD2,float SX1,float SY1,float SPARAM[5])
  * SSWAP - swap x and y
  *
  */
+
+COREAPI void sswap(int n,float *sx,int incx,float *sy,int incy)
+{
+    int i;
+    float tmp;
+    for(i=0;i<n;++i)
+    {
+        tmp=*sx;
+        *sx=*SY;
+        *sy=tmp;
+
+        sx+=incy;
+        sy+=incy;
+    }
+}
+
+/*
+ * SSCAL - x = a*x
+ */
+
+
+
+
+
+/*
+ * SCOPY - copy x into y
+ *
+ */
+
+/*
+ * SAXPY - y = a*x + y
+ *
+ */
+
+
+/*
+ *
+ * SDOT - dot product
+ *
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #endif // LEVEL1_H

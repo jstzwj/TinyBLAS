@@ -7,4 +7,5 @@ SOURCES += main.c
 
 HEADERS += \
     level1.h \
-    utility.h
+    utility.h \
+    version.h

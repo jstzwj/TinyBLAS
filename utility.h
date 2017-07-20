@@ -1,7 +1,8 @@
 #ifndef UTILITY_H
 #define UTILITY_H
+#include"version.h"
 
-int sign(int n)
+TINYBLAS_INLINE int sign(int n)
 {
     if(n>0)
         return 1;
@@ -10,7 +11,7 @@ int sign(int n)
     else
         return 0;
 }
-long signl(long n)
+TINYBLAS_INLINE long signl(long n)
 {
     if(n>0l)
         return 1l;
@@ -19,7 +20,7 @@ long signl(long n)
     else
         return 0l;
 }
-long long signll(long long n)
+TINYBLAS_INLINE long long signll(long long n)
 {
     if(n>0ll)
         return 1ll;
@@ -28,7 +29,7 @@ long long signll(long long n)
     else
         return 0ll;
 }
-float signf(float n)
+TINYBLAS_INLINE float signf(float n)
 {
     if(n>0.0f)
         return 1.0f;
@@ -37,7 +38,7 @@ float signf(float n)
     else
         return 0.0f;
 }
-double signlf(double n)
+TINYBLAS_INLINE double signlf(double n)
 {
     if(n>0.0)
         return 1.0;
