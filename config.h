@@ -1,0 +1,11 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+
+#define TINYBLAS_ENABLE_SSE
+#define TINYBLAS_ENABLE_AVX
+#define TINYBLAS_ENABLE_MULTI_CORE
+
+
+
+#endif // CONFIG_H

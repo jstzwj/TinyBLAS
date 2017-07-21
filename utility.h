@@ -1,6 +1,7 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 #include"version.h"
+#include"compiler.h"
 
 TINYBLAS_INLINE int sign(int n)
 {

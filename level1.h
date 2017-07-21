@@ -92,7 +92,15 @@ COREAPI void sswap(int n,float *sx,int incx,float *sy,int incy)
  * SSCAL - x = a*x
  */
 
-
+COREAPI void sscal(int n,float sa,float *sx,int incx)
+{
+    int i;
+    for(i=0;i<n;++i)
+    {
+        *sx=sa*(*sx);
+        sx+=incx;
+    }
+}
 
 
 
@@ -100,11 +108,22 @@ COREAPI void sswap(int n,float *sx,int incx,float *sy,int incy)
  * SCOPY - copy x into y
  *
  */
+COREAPI void scopy(int n,float * sx,int incx,float * sy,int incy)
+{
+    int i;
+    for(i=0;i<n;++i)
+    {
+        *sy=*sx;
+        sx+=incx;
+        sy+=incy;
+    }
+}
 
 /*
  * SAXPY - y = a*x + y
  *
  */
+
 
 
 /*
@@ -113,10 +132,80 @@ COREAPI void sswap(int n,float *sx,int incx,float *sy,int incy)
  *
  */
 
+COREAPI float sdot(int n,float *sx,int incx,float *sy,int incy)
+{
+    float rst=0.0f;
+    int i;
+    for(i=0;i<n;++i)
+    {
+        rst+=(*sx)*(*sy);
+        sx+=incx;
+        sy+=incy;
+    }
+    return rst;
+}
+
+/*
+ * SDSDOT - dot product with extended precision accumulation
+ *
+ */
 
 
 
+/*
+ *
+ * SNRM2 - Euclidean norm
+ */
 
+
+
+/*
+ * SCNRM2- Euclidean norm
+ *
+ */
+
+/*
+ *
+ * SASUM - sum of absolute values
+ */
+
+
+COREAPI float sasum(int n,float * sx,int incx)
+{
+    float sum=0.0f;
+    int i;
+    for(i=0;i<n;++i)
+    {
+        sum+=fabs(*sx);
+        sx+=incx;
+    }
+    return sum;
+}
+
+
+
+/*
+ * ISAMAX - index of max abs value
+ *
+ */
+
+
+COREAPI int isamax(int n,float *sx,int incx)
+{
+    int max_index=0;
+    float max_val=*sx;
+    int i;
+    for(i=0;i<n;++i)
+    {
+        if(*sx>max_val)
+        {
+            max_val=*sx;
+            max_index=i;
+        }
+        sx+=incx;
+    }
+    return max_index;
+}
 
 
 
